@@ -41,12 +41,6 @@
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postal_code    | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
-| city           | string     | null: false                    |
-| address        | string     | null: false                    |
-| building       | string     |                                |
-| phone_number   | string     | null: false                    |
 | item           | references | null: false, foreign_key: true |
 | user           | references | null: false, foreign_key: true |
 
@@ -54,3 +48,19 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :information
+
+## information テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_code    | string     | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| city           | string     | null: false                    |
+| address        | string     | null: false                    |
+| building       | string     |                                |
+| phone_number   | string     | null: false                    |
+
+### Association
+
+- belongs_to :order
