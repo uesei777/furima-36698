@@ -11,7 +11,7 @@
 | write_first_name   | string   | null: false              |
 | read_last_name     | string   | null: false              |
 | read_first_name    | string   | null: false              |
-| birth_date         | datetime | null: false              |
+| birth_date         | date     | null: false              |
 
 ### Association
 
