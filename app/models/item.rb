@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
 
   belongs_to :user
+  has_one_attached :image
 
   validates :product, presence: true
   validates :explanation, presence: true
@@ -14,5 +15,5 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :prefecture
   belongs_to :days
-  
+
 end
