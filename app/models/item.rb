@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   validates :image, presence: true
   validates :product, presence: true
   validates :explanation, presence: true
-  validates :price, presence: true, numericality: { in: 300..9999999 }
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 
   validates :category_id, :status_id, :delivery_fee_id, :prefecture_id, :days_id, numericality: { other_than: 1, message: "can't be blank"}
 
