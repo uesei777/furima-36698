@@ -26,6 +26,15 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:product, :explanation, :price, :image, :category_id, :status_id, :delivery_fee_id,
