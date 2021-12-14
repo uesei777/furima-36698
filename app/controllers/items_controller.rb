@@ -49,4 +49,5 @@ class ItemsController < ApplicationController
   def set_tweet
     @item = Item.find(params[:id])
   end
+  
 end
