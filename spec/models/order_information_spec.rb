@@ -53,17 +53,17 @@ RSpec.describe OrderInformation, type: :model do
       it 'phone_numberが半角数値以外だと保存できないこと' do
         @order_information.phone_number = 'aaaaaaaaaa'
         @order_information.valid?
-        expect(@order_information.errors.full_messages).to include("Phone number is not a number")
+        expect(@order_information.errors.full_messages).to include('Phone number is not a number')
       end
       it 'phone_numberが9桁以下だと保存できないこと' do
         @order_information.phone_number = '123456789'
         @order_information.valid?
-        expect(@order_information.errors.full_messages).to include("Phone number is too short (minimum is 10 characters)")
+        expect(@order_information.errors.full_messages).to include('Phone number is too short (minimum is 10 characters)')
       end
       it 'phone_numberが12桁以上だと保存できないこと' do
         @order_information.phone_number = '012345678912'
         @order_information.valid?
-        expect(@order_information.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+        expect(@order_information.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
       it 'userが紐付いていないと保存できないこと' do
         @order_information.user_id = nil
@@ -75,7 +75,7 @@ RSpec.describe OrderInformation, type: :model do
         @order_information.valid?
         expect(@order_information.errors.full_messages).to include("Item can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_information.token = nil
         @order_information.valid?
         expect(@order_information.errors.full_messages).to include("Token can't be blank")
